@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GameNews - Curiosidades e Informações sobre Games</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+        }
+
+        nav {
+            background-color: #333;
+            text-align: center;
+            padding: 15px 0;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+
+        .main-container {
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .article-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .article-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .article-card h3 {
+            margin: 15px;
+            font-size: 1.5rem;
+            color: #333;
+        }
+
+        .article-card p {
+            padding: 0 15px 15px;
+            font-size: 1rem;
+            color: #777;
+        }
+
+        .article-card a {
+            display: block;
+            padding: 10px 15px;
+            background-color: #f4a261;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            margin-top: 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .article-card a:hover {
+            background-color: #e76f51;
+        }
+
+        .article-card:hover {
+            transform: translateY(-10px);
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        footer a {
+            color: #f4a261;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            background-color: #f4a261;
+            padding: 40px 20px;
+            color: white;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact form button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact form button:hover {
+            background-color: #f4a261;
+        }
+
+        @media (max-width: 768px) {
+            .main-container {
+                padding: 20px;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .article-card {
+                margin-bottom: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>GameNews</h1>
+        <p>Curiosidades e Notícias sobre o Mundo dos Games</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#articles">Artigos</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-container">
+        <section id="home">
+            <h2>Bem-vindo ao GameNews!</h2>
+            <p>Explore as últimas curiosidades, notícias e informações sobre o mundo dos jogos. Mantenha-se atualizado sobre o que acontece nos jogos que você ama!</p>
+        </section>
+
+        <section id="articles">
+            <h2>Artigos e Curiosidades</h2>
+            <div class="article-card">
+                <img src="https://via.placeholder.com/800x400" alt="Curiosidade 1">
+                <h3>A História de Super Mario</h3>
+                <p>Super Mario é um dos jogos mais icônicos de todos os tempos. Descubra como ele conquistou o mundo dos games e se tornou um verdadeiro fenômeno cultural!</p>
+                <a href="#">Leia Mais</a>
+            </div>
+
+            <div class="article-card">
+                <img src="https://via.placeholder.com/800x400" alt="Curiosidade 2">
+                <h3>Curiosidades sobre o Mundo de Zelda</h3>
+                <p>A franquia The Legend of Zelda possui uma rica história e muitos segredos. Conheça alguns fatos fascinantes sobre esse clássico dos jogos de aventura!</p>
+                <a href="#">Leia Mais</a>
+            </div>
+
+            <div class="article-card">
+                <img src="https://via.placeholder.com/800x400" alt="Curiosidade 3">
+                <h3>Como os Jogos Mudaram a Indústria do Entretenimento</h3>
+                <p>Os videogames não são apenas uma forma de lazer, mas também uma indústria multimilionária. Saiba como os jogos impactaram a economia e a cultura mundial!</p>
+                <a href="#">Leia Mais</a>
+            </div>
+
+            <div class="article-card">
+                <img src="https://via.placeholder.com/800x400" alt="Curiosidade 4">
+                <h3>Os Maiores Recordes de Jogos no Mundo</h3>
+                <p>Você sabia que existem recordes incríveis no mundo dos jogos? Conheça alguns dos feitos mais impressionantes dos gamers ao redor do mundo!</p>
+                <a href="#">Leia Mais</a>
+            </div>
+        </section>
+
+        <section id="contact" class="contact">
+            <h2>Entre em Contato</h2>
+            <p>Tem alguma dúvida ou sugestão? Envie-nos uma mensagem!</p>
+            <form>
+                <input type="text" name="name" placeholder="Seu nome" required>
+                <input type="email" name="email" placeholder="Seu e-mail" required>
+                <textarea name="message" rows="5" placeholder="Sua mensagem" required></textarea>
+                <button type="submit">Enviar Mensagem</button>
+            </form>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 GameNews. Todos os direitos reservados.</p>
+        <p>Feito com <span style="color: red;">&#9829;</span> para você.</p>
+        <p><a href="#home">Voltar ao topo</a></p>
+    </footer>
+
+</body>
+</html>
