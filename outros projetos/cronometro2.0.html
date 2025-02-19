@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cronômetro</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #333;
+        }
+
+        .cronometro-container {
+            background-color: #fff;
+            padding: 40px 50px;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        #tempo {
+            font-size: 80px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        button {
+            font-size: 18px;
+            padding: 15px 30px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            width: 150px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        button:active {
+            transform: scale(1);
+        }
+
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+
+        #parar {
+            background-color: #f44336;
+        }
+
+        #parar:hover {
+            background-color: #e53935;
+        }
+
+        #resetar {
+            background-color: #9e9e9e;
+        }
+
+        #resetar:hover {
+            background-color: #757575;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        @media (max-width: 600px) {
+            #tempo {
+                font-size: 60px;
+            }
+
+            button {
+                font-size: 16px;
+                padding: 12px 25px;
+            }
+
+            .cronometro-container {
+                padding: 30px 40px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cronometro-container">
+        <div id="tempo">00:00</div>
+        <div class="button-container">
+            <button id="iniciar">Iniciar</button>
+            <button id="parar">Parar</button>
+            <button id="resetar">Resetar</button>
+        </div>
+    </div>
+
+    <script>
+        let tempo = 0;
+        let cronometro;
+        let rodando = false;
+
+        const tempoDisplay = document.getElementById('tempo');
+        const iniciarButton = document.getElementById('iniciar');
+        const pararButton = document.getElementById('parar');
+        const resetarButton = document.getElementById('resetar');
+
+        function formatarTempo(segundos) {
+            const minutos = Math.floor(segundos / 60);
+            const segundosRestantes = segundos % 60;
+            return `${String(minutos).padStart(2, '0')}:${String(segundosRestantes).padStart(2, '0')}`;
+        }
+
+        function iniciarCronometro() {
+            cronometro = setInterval(() => {
+                tempo++;
+                tempoDisplay.textContent = formatarTempo(tempo);
+            }, 1000);
+        }
+
+        function pararCronometro() {
+            clearInterval(cronometro);
+        }
+
+        function atualizarBotoes(estado) {
+            iniciarButton.textContent = estado ? 'Pausar' : 'Iniciar';
+            pararButton.disabled = !estado;
+            resetarButton.disabled = tempo === 0;
+        }
+
+        iniciarButton.addEventListener('click', () => {
+            if (!rodando) {
+                rodando = true;
+                iniciarCronometro();
+            } else {
+                rodando = false;
+                pararCronometro();
+            }
+            atualizarBotoes(rodando);
+        });
+
+        pararButton.addEventListener('click', () => {
+            rodando = false;
+            pararCronometro();
+            atualizarBotoes(rodando);
+        });
+
+        resetarButton.addEventListener('click', () => {
+            rodando = false;
+            tempo = 0;
+            tempoDisplay.textContent = '00:00';
+            pararCronometro();
+            atualizarBotoes(rodando);
+        });
+
+        atualizarBotoes(false);
+    </script>
+
+</body>
+</html>
